@@ -273,8 +273,8 @@ module ascon_module(
         end
     end
     assign s_tdata_swapped = {s_axi_tdata[7:0], s_axi_tdata[15:8],s_axi_tdata[23:16],s_axi_tdata[31:24],s_axi_tdata[39:32],s_axi_tdata[47:40],s_axi_tdata[55:48],s_axi_tdata[63:56]};
-    assign s_tready = (current_state == AD_ABSORB) || (current_state == PT_ABSORB);
-    assign m_tdata = {m_tdata_internal[7:0],  m_tdata_internal[15:8], m_tdata_internal[23:16], m_tdata_internal[31:24], 
+    assign s_axi_tready = (current_state == AD_ABSORB) || (current_state == PT_ABSORB);
+    assign m_axi_tdata = {m_tdata_internal[7:0],  m_tdata_internal[15:8], m_tdata_internal[23:16], m_tdata_internal[31:24], 
                       m_tdata_internal[39:32], m_tdata_internal[47:40], m_tdata_internal[55:48], m_tdata_internal[63:56]};
 endmodule
 
