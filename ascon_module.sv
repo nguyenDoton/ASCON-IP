@@ -107,7 +107,7 @@ module ascon_module(
         FINAL_START,    // XOR Key into state[1] & state[2], perm_start = 1 (12 rounds)
         FINAL_WAIT,     // Wait for perm_done
         FINAL_TAG_FIRST,
-        FINAL_TAG_SECOND       // Output the final 128-bit Tag!
+        FINAL_TAG_SECOND       // Output the final 128-bit Tag
     } state_t;
 
     state_t current_state;
@@ -266,9 +266,6 @@ module ascon_module(
                 end
             end
             default: current_state <= IDLE;
-
-
-
             endcase
         end
     end
